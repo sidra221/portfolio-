@@ -11,7 +11,7 @@ export default function Contact() {
     { label: 'الإيميل', value: 'sidrasayed86@gmail.com', href: 'mailto:your.email@example.com', icon: <EmailIcon /> },
     { label: 'رقم الهاتف', value: '+96347158561', href: 'tel:+9665XXXXXXXX', icon: <PhoneIcon /> },
     { label: 'لينكد إن', value: 'www.linkedin.com/in/sidra-alsayed-514702255', href: 'https://linkedin.com/in/yourname', icon: <LinkedInIcon /> },
-    { label: 'جيت هاب', value: 'github.com/yourname', href: 'https://github.com/yourname', icon: <GitHubIcon /> },
+    { label: 'جيت هاب', value: 'github.com/sidraAlsayed', href: 'https://github.com/yourname', icon: <GitHubIcon /> },
     { label: 'بيهاينس', value: 'www.behance.net/sidra_alsayed', href: 'https://behance.net/yourname', icon: <BrushIcon /> },
   ]
 
