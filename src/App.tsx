@@ -10,9 +10,9 @@ import Contact from './pages/Contact'
 
 export default function App() {
   return (
-    <Box sx={{ bgcolor: 'background.default', color: 'text.primary', height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+    <Box sx={{ bgcolor: 'background.default', color: 'text.primary', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
-      <Container maxWidth="lg" sx={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      <Container maxWidth="lg" sx={{ flex: 1, display: 'flex', flexDirection: 'column', px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 3 } }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<Work />} />

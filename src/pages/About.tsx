@@ -9,22 +9,22 @@ export default function About() {
     { company: 'Pintours', role: 'مصممة واجهات تفاعلية', dates: 'current' },
   ]
   return (
-    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', pt: 6 }}>
+    <Box sx={{ minHeight: '100%', display: 'flex', flexDirection: 'column', pt: { xs: 4, sm: 6 }, width: '100%' }}>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
         <Box>
-          <Typography color="text.secondary" sx={{ mt: 0 }}>
+          <Typography color="text.secondary" sx={{ mt: 0, fontSize: { xs: '0.875rem', sm: '1rem' } }}>
             مصممة UI/UX أعشق التفاصيل الأنثوية، البساطة، والتجارب الانسيابية. أوازن بين الجمال والوظيفة، وأؤمن أن التصميم الحساس يخلق ارتباطًا عاطفيًا مع المستخدمات.
           </Typography>
         </Box>
         
         <Box>
           <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mt: 1 }}>
-            {skills.map(s => <Chip key={s} label={s} color="primary" variant="outlined" />)}
+            {skills.map(s => <Chip key={s} label={s} color="primary" variant="outlined" sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' }, height: { xs: 28, sm: 32 } }} />)}
           </Stack>
         </Box>
 
         <Box>
-          <Typography variant="h5" sx={{ fontWeight: 700, mb: 2 }}>الخبرات</Typography>
+          <Typography variant="h5" sx={{ fontWeight: 700, mb: 2, fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>الخبرات</Typography>
           <Box sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, 1fr)' },
@@ -40,7 +40,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 elevation={0}
                 sx={{
-                  p: 2.5,
+                  p: { xs: 2, sm: 2.5 },
                   borderRadius: 2,
                   border: '1px solid',
                   borderColor: 'divider',
@@ -52,13 +52,13 @@ export default function About() {
                   },
                 }}
               >
-                <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5 }}>
+                <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, fontSize: { xs: '0.7rem', sm: '0.75rem' } }}>
                   {exp.dates}
                 </Typography>
-                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: 'primary.main' }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: 'primary.main', fontSize: { xs: '1rem', sm: '1.25rem' } }}>
                   {exp.company}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" sx={{ fontSize: { xs: '0.8rem', sm: '0.875rem' } }}>
                   {exp.role}
                 </Typography>
               </Paper>

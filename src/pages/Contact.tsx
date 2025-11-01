@@ -16,12 +16,12 @@ export default function Contact() {
   ]
 
   return (
-    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', pt: 8 }}>
-      <Typography color="text.secondary" sx={{ mt: 0, mb: 4 }}>يسعدني التعاون في مشاريع تصميم جديدة.</Typography>
+    <Box sx={{ minHeight: '100%', display: 'flex', flexDirection: 'column', pt: { xs: 4, sm: 8 }, width: '100%' }}>
+      <Typography color="text.secondary" sx={{ mt: 0, mb: 4, fontSize: { xs: '0.875rem', sm: '1rem' } }}>يسعدني التعاون في مشاريع تصميم جديدة.</Typography>
       <Box sx={{
         display: 'grid',
         gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-        gap: 2.5,
+        gap: { xs: 2, sm: 2.5 },
       }}>
         {contacts.map((contact, idx) => (
           <Paper
@@ -33,7 +33,7 @@ export default function Contact() {
             transition={{ duration: 0.5, delay: idx * 0.1 }}
             elevation={0}
             sx={{
-              p: 3,
+              p: { xs: 2, sm: 3 },
               borderRadius: 2,
               border: '1px solid',
               borderColor: 'divider',
@@ -48,15 +48,15 @@ export default function Contact() {
             <Stack direction="row" spacing={2} alignItems="flex-start">
               <Box sx={{ 
                 color: 'primary.main', 
-                fontSize: '1.5rem',
+                fontSize: { xs: '1.25rem', sm: '1.5rem' },
                 display: 'flex',
                 alignItems: 'center',
-                minWidth: '32px'
+                minWidth: { xs: '28px', sm: '32px' }
               }}>
                 {typeof contact.icon === 'string' ? contact.icon : contact.icon}
               </Box>
-              <Box sx={{ flex: 1 }}>
-                <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5 }}>
+              <Box sx={{ flex: 1, overflow: 'hidden' }}>
+                <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 0.5, fontSize: { xs: '0.7rem', sm: '0.75rem' } }}>
                   {contact.label}
                 </Typography>
                 <Link
@@ -68,6 +68,8 @@ export default function Contact() {
                     textDecoration: 'none',
                     fontWeight: 500,
                     display: 'block',
+                    fontSize: { xs: '0.8rem', sm: '1rem' },
+                    wordBreak: 'break-word',
                     '&:hover': {
                       color: 'primary.main',
                     },
