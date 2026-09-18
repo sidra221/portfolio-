@@ -132,6 +132,12 @@ export type Education = {
 
 export const education: Education[] = [
   {
+    degree: 'B.E. in Computer and Automation Engineering',
+    institution: 'Damascus University',
+    period: '2021 — 2026',
+    location: 'Damascus, Syria',
+  },
+  {
     degree: 'Workflow Automation Training — n8n',
     institution: 'beIN MEDIA',
     period: 'Jun 2026 — Jul 2026',
@@ -140,12 +146,6 @@ export const education: Education[] = [
       'Hands-on training in workflow automation using n8n.',
       'Built multi-step workflows using triggers, webhooks, API integrations, data transformation and automated notifications.',
     ],
-  },
-  {
-    degree: 'B.E. in Computer and Automation Engineering',
-    institution: 'Damascus University',
-    period: '2021 — 2026',
-    location: 'Damascus, Syria',
   },
 ]
 
