@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Plum-tinted neutrals — a pure slate grey goes cold next to rose. */
+  --color-formal-50: #fbf9fa;
+  --color-formal-100: #f4f0f3;
+  --color-formal-200: #e7e0e6;
+  --color-formal-300: #cfc5cd;
+  --color-formal-400: #9e93a0;
+  --color-formal-500: #6f6675;
+  --color-formal-600: #554e5a;
+  --color-formal-700: #3e3844;
+  --color-formal-800: #262130;
+  --color-formal-900: #15111c;
+
+  /* Brand rose. */
+  --color-brand-50: #fdf2f7;
+  --color-brand-100: #fce7f1;
+  --color-brand-200: #fbcfe3;
+  --color-brand-300: #f8a8cb;
+  --color-brand-400: #f27baf;
+  --color-brand-500: #e0538f;
+  --color-brand-600: #c13a6e;
+  --color-brand-700: #9e2b57;
+  --color-brand-800: #7a2044;
+  --color-brand-900: #551630;
+
+  /* Violet companion, used only in gradients beside the rose. */
+  --color-plum-400: #ac9de4;
+  --color-plum-500: #8b77d6;
+  --color-plum-600: #6d55bd;
+
+  --color-surface: #fbf9fa;
+  --color-surface-elevated: #ffffff;
+  --color-border: #e7e0e6;
+  --color-muted: #6f6675;
+  --color-accent: #c13a6e;
+
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-display: "Sora", "Source Sans 3", system-ui, sans-serif;
+}
+
+:root {
+  /* Pointer glare on tilt cards: over light cards a white sheen is
+     invisible, so light mode uses a soft rose tint instead. */
+  --tilt-glare: rgb(193 58 110 / 0.13);
+}
+
+.dark {
+  --color-surface: #15111c;
+  --color-surface-elevated: #262130;
+  --color-border: #3e3844;
+  --color-muted: #9e93a0;
+  --color-accent: #f08bb0;
+  --tilt-glare: rgb(255 255 255 / 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  background-color: var(--color-formal-50);
+  color: var(--color-formal-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+.dark body {
+  background-color: var(--color-formal-900);
+  color: var(--color-formal-50);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-formal-900);
+  outline-offset: 2px;
+}
+
+.dark :focus-visible {
+  outline-color: var(--color-formal-50);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  /* Headline starts in the text colour and resolves into rose — white on a
+     dark page, ink on a light one, so the first word stays maximally legible. */
+  .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-formal-900) 0%,
+      #9e2b57 52%,
+      #e0538f 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .dark .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      #ffffff 0%,
+      #f8a8cb 52%,
+      #e0538f 100%
+    );
+  }
+
+  /* Frosted-glass card — the single card language of the site. */
+  .glass-card {
+    background-color: rgb(255 255 255 / 0.66);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgb(231 224 230 / 0.9);
+    box-shadow:
+      0 1px 2px rgb(21 17 28 / 0.04),
+      0 8px 24px -12px rgb(21 17 28 / 0.1);
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease,
+      background-color 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgb(193 58 110 / 0.4);
+    box-shadow:
+      0 2px 4px rgb(21 17 28 / 0.04),
+      0 18px 44px -18px rgb(193 58 110 / 0.28);
+  }
+
+  .dark .glass-card {
+    background-color: rgb(38 33 48 / 0.58);
+    border-color: rgb(62 56 68 / 0.9);
+    box-shadow:
+      0 1px 2px rgb(0 0 0 / 0.25),
+      0 8px 24px -12px rgb(0 0 0 / 0.4);
+  }
+
+  .dark .glass-card:hover {
+    border-color: rgb(240 139 176 / 0.4);
+    box-shadow:
+      0 2px 4px rgb(0 0 0 / 0.25),
+      0 18px 44px -18px rgb(224 83 143 / 0.25);
+  }
+
+  /* Glass bar (header) — same glass, no hover accent. */
+  .glass-bar {
+    background-color: rgb(255 255 255 / 0.72);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgb(231 224 230 / 0.9);
+    box-shadow: 0 8px 32px -16px rgb(21 17 28 / 0.15);
+  }
+
+  .dark .glass-bar {
+    background-color: rgb(21 17 28 / 0.72);
+    border-color: rgb(62 56 68 / 0.8);
+    box-shadow: 0 8px 32px -16px rgb(0 0 0 / 0.5);
+  }
+}
+
+/* The aurora canvas mounts after the page is idle — ease it in instead
+   of popping. */
+@keyframes bg-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bg-fade-in {
+  animation: bg-fade-in 1s ease-out both;
+}

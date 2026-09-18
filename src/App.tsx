@@ -1,28 +1,77 @@
-import { Routes, Route } from 'react-router-dom'
-import Container from '@mui/material/Container'
-import Box from '@mui/material/Box'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import Work from './pages/Work'
-import About from './pages/About'
-import Contact from './pages/Contact'
+import { lazy, Suspense, useEffect, useState } from 'react'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Experience from './components/Experience'
+import Education from './components/Education'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
+import ScrollProgress from './components/ui/ScrollProgress'
+import { useTheme } from './hooks/useTheme'
+import { useActiveSection } from './hooks/useActiveSection'
 
-export default function App() {
+// Heavy WebGL/Three.js payload — split out so it never blocks first paint.
+const ThreeBackground = lazy(() => import('./components/ThreeBackground'))
+
+/**
+ * Mount the aurora only once the browser is idle: the Three.js chunk and
+ * WebGL context creation otherwise compete with hydration and first
+ * interaction.
+ */
+function useMountWhenIdle() {
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    const start = () => setReady(true)
+    if (typeof window.requestIdleCallback === 'function') {
+      const id = window.requestIdleCallback(start, { timeout: 2500 })
+      return () => window.cancelIdleCallback(id)
+    }
+    const id = window.setTimeout(start, 1200)
+    return () => window.clearTimeout(id)
+  }, [])
+
+  return ready
+}
+
+function App() {
+  const activeSection = useActiveSection('about')
+  const { theme, toggleTheme } = useTheme()
+  const backgroundReady = useMountWhenIdle()
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (!element) return
+
+    const headerOffset = 80
+    const elementPosition = element.getBoundingClientRect().top
+    window.scrollTo({ top: elementPosition + window.scrollY - headerOffset, behavior: 'smooth' })
+  }
+
   return (
-    <Box sx={{ bgcolor: 'background.default', color: 'text.primary', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navbar />
-      <Container maxWidth="lg" sx={{ flex: 1, display: 'flex', flexDirection: 'column', px: { xs: 2, sm: 3 }, py: { xs: 2, sm: 3 } }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Container>
-      <Footer />
-    </Box>
+    <div className="min-h-screen font-sans relative bg-formal-50 text-formal-900 selection:bg-formal-900 selection:text-white dark:bg-formal-900 dark:text-formal-50 dark:selection:bg-formal-50 dark:selection:text-formal-900 transition-colors duration-500">
+      {backgroundReady && (
+        <Suspense fallback={null}>
+          <ThreeBackground theme={theme} />
+        </Suspense>
+      )}
+      <ScrollProgress />
+      <Header
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
+      <main id="main" className="relative z-[2]">
+        <Hero scrollToSection={scrollToSection} />
+        <Experience />
+        <Education />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+    </div>
   )
 }
 
-
+export default App
