@@ -62,6 +62,7 @@ export const experiences: Experience[] = [
       'Develop end-to-end web applications with Django, Django REST Framework, React, PostgreSQL and MySQL.',
       'Build REST APIs, authentication, role-based permissions, dashboards and CRUD workflows.',
       'Integrate AI services and third-party APIs, and containerize applications with Docker Compose.',
+      'Also develop cross-platform mobile apps with Flutter, including offline-first sync and full localization, when a project calls for a native experience.',
       'Translate client requirements into responsive, maintainable solutions across frontend and backend.',
     ],
   },
@@ -79,7 +80,7 @@ export const experiences: Experience[] = [
   {
     title: 'UI/UX Designer',
     company: 'Pintours',
-    period: 'May 2025 — Present',
+    period: 'May 2025 — May 2026',
     location: 'United States · Remote',
     tag: 'UI/UX',
     description: [
@@ -90,7 +91,7 @@ export const experiences: Experience[] = [
   {
     title: 'UI/UX Designer',
     company: 'Amescom',
-    period: 'Sep 2024 — Present',
+    period: 'Sep 2024 — Mar 2025',
     location: 'Damascus, Syria',
     tag: 'UI/UX',
     description: [
@@ -160,6 +161,7 @@ export const skillCategories: SkillCategory[] = [
     name: 'Frontend',
     skills: ['React', 'JavaScript', 'TypeScript', 'Material UI', 'Tailwind CSS', 'HTML5', 'CSS3'],
   },
+  { name: 'Mobile', skills: ['Flutter', 'Dart', 'Riverpod'] },
   { name: 'Databases', skills: ['PostgreSQL', 'MySQL', 'MongoDB'] },
   {
     name: 'Automation & Infrastructure',
@@ -169,6 +171,7 @@ export const skillCategories: SkillCategory[] = [
     name: 'AI Integration',
     skills: ['RAG', 'LLM Integration', 'Whisper', 'LlamaIndex', 'Qdrant', 'Document Processing'],
   },
+  { name: 'Integrations', skills: ['Shopify Admin API'] },
   {
     name: 'Design Foundation',
     skills: ['Figma', 'Adobe XD', 'Wireframing', 'Prototyping', 'Design Systems'],
@@ -185,6 +188,27 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    title: 'Control — AI Shopping Assistant & Shopify Integration',
+    description:
+      'An embeddable AI shopping-assistant widget for e-commerce stores: a single script tag adds a chat widget that recommends products, generates a virtual try-on image, and keeps its catalog synced live with Shopify.',
+    features: [
+      'Embeddable JavaScript widget with Shadow DOM isolation, installable on any site with one script tag',
+      'LLM-powered assistant (Anthropic/OpenAI/Gemini) that understands customer intent and recommends a matching product',
+      'Virtual try-on: generates a realistic image of the customer wearing the recommended product',
+      'Django admin dashboard for per-merchant API tokens, usage quotas and catalog management',
+      'Live Shopify catalog sync via the Admin API and webhooks — no manual re-upload when products change',
+    ],
+    technologies: [
+      'Django',
+      'DRF',
+      'JavaScript',
+      'PostgreSQL',
+      'Anthropic/OpenAI/Gemini APIs',
+      'Shopify Admin API',
+    ],
+    githubUrl: 'https://github.com/sidra221/control-dashboard',
+  },
   {
     title: 'Vocalys',
     description:
