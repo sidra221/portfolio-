@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sidra Alsayed — CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Print-first stylesheet: this file exists to be rendered to PDF by
+         headless Chrome (see build.sh). Single column, real text, no images —
+         so applicant tracking systems can parse it. */
+      @page {
+        size: A4;
+        margin: 13mm 14mm;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", system-ui, sans-serif;
+        font-size: 10.1pt;
+        line-height: 1.42;
+        color: #1a1a1a;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      /* ---- header ---------------------------------------------------- */
+      .name {
+        font-size: 23pt;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        line-height: 1.1;
+        margin: 0;
+      }
+
+      .title {
+        font-size: 10.5pt;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #c13a6e;
+        margin: 3pt 0 5pt;
+      }
+
+      .contact { font-size: 9.4pt; color: #444; }
+      .contact .sep { color: #bbb; padding: 0 4pt; }
+
+      .rule { height: 1.6pt; background: #c13a6e; margin: 7pt 0 0; }
+
+      /* ---- sections --------------------------------------------------- */
+      h2 {
+        font-size: 10pt;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: #1a1a1a;
+        margin: 13pt 0 5pt;
+        padding-bottom: 2.5pt;
+        border-bottom: 0.7pt solid #d8d8d8;
+        break-after: avoid;
+      }
+
+      .entry { margin-bottom: 8pt; break-inside: avoid; }
+      .entry:last-child { margin-bottom: 0; }
+
+      .entry-head {
+        font-size: 10.6pt;
+        font-weight: 700;
+      }
+
+      .entry-sub {
+        font-size: 9.3pt;
+        color: #555;
+        margin-top: 1pt;
+      }
+
+      .entry-kicker {
+        font-size: 8.6pt;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: #c13a6e;
+        margin-top: 1pt;
+      }
+
+      ul { margin: 3.5pt 0 0; padding-left: 13pt; }
+      li { margin-bottom: 1.8pt; }
+      li::marker { color: #c13a6e; }
+
+      .tech {
+        font-size: 9.2pt;
+        color: #444;
+        margin-top: 3pt;
+      }
+      .tech b { color: #1a1a1a; }
+
+      .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5pt 16pt; }
+      .skill-row { font-size: 9.6pt; }
+      .skill-row b { font-weight: 700; }
+
+      p.summary { margin: 0; text-align: justify; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="name">Sidra Alsayed</h1>
+      <div class="title">Full-Stack Developer | Django &amp; React</div>
+      <div class="contact">
+        Damascus, Syria <span class="sep">|</span> (+963) 947 158 561
+        <span class="sep">|</span> sidrasayed86@gmail.com
+        <span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/sidra-alsayed-514702255">LinkedIn</a>
+        <span class="sep">|</span>
+        <a href="https://github.com/sidra221">GitHub</a>
+        <span class="sep">|</span>
+        <a href="https://www.behance.net/sidra_alsayed">Behance</a>
+      </div>
+      <div class="rule"></div>
+    </header>
+
+    <h2>Professional Summary</h2>
+    <p class="summary">
+      Full-Stack Developer specializing in scalable web applications using Django, React, and relational
+      databases. Experienced in REST APIs, authentication and role-based access, responsive dashboards,
+      AI-powered features, background processing, and Docker-based environments. Brings a strong UI/UX
+      foundation to deliver maintainable products that are both functional and intuitive.
+    </p>
+
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <div class="skill-row"><b>Backend:</b> Python, Django, Django REST Framework, REST APIs</div>
+      <div class="skill-row"><b>Frontend:</b> React, JavaScript, HTML5, CSS3, Material UI</div>
+      <div class="skill-row"><b>Mobile:</b> Flutter, Dart, Riverpod</div>
+      <div class="skill-row"><b>Databases:</b> PostgreSQL, MySQL</div>
+      <div class="skill-row"><b>Quality Assurance:</b> Manual testing, API testing, Postman, test cases, bug reporting, regression testing</div>
+      <div class="skill-row"><b>Automation &amp; Infrastructure:</b> n8n, Docker, Docker Compose, Git, GitHub, Bash</div>
+      <div class="skill-row"><b>AI Integration:</b> RAG, LLM integration, document processing, Whisper</div>
+      <div class="skill-row"><b>Integrations:</b> Shopify Admin API</div>
+      <div class="skill-row"><b>Design Foundation:</b> Figma, Adobe XD, wireframing, prototyping</div>
+    </div>
+
+    <h2>Professional Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">QA Engineer - Dorr</div>
+      <div class="entry-sub">Nov 2026 - Present | Saudi Arabia, Remote</div>
+      <ul>
+        <li>Write and execute manual test cases across functional, regression, and edge-case scenarios.</li>
+        <li>Test REST APIs with Postman — request and response validation, status codes, payload integrity, and error handling.</li>
+        <li>Document defects with clear reproduction steps and severity, and verify fixes with the development team.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Full-Stack Developer - Freelance</div>
+      <div class="entry-sub">2026 - Present | Remote</div>
+      <ul>
+        <li>Develop end-to-end web applications with Django, Django REST Framework, React, PostgreSQL, and MySQL.</li>
+        <li>Build REST APIs, authentication, role-based permissions, dashboards, and CRUD workflows.</li>
+        <li>Integrate AI services and third-party APIs, and containerize applications with Docker Compose.</li>
+        <li>Also develop cross-platform mobile apps with Flutter, including offline-first sync and full localization, when a project calls for a native experience.</li>
+        <li>Translate client requirements into responsive, maintainable solutions across frontend and backend layers.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Workflow Automation Trainee - beIN MEDIA</div>
+      <div class="entry-sub">Jun 2026 - Jul 2026</div>
+      <ul>
+        <li>Completed hands-on training in workflow automation using n8n.</li>
+        <li>Built multi-step workflows using triggers, webhooks, API integrations, data transformation, and automated notifications.</li>
+      </ul>
+    </div>
+
+    <h2>Selected Full-Stack &amp; AI Projects</h2>
+
+    <div class="entry">
+      <div class="entry-head">Control — AI Shopping Assistant &amp; Shopify Integration</div>
+      <div class="entry-kicker">Embeddable AI Widget + Merchant Dashboard</div>
+      <ul>
+        <li>Built an embeddable JavaScript chat widget (Shadow DOM isolation) that any e-commerce site can add with a single script tag.</li>
+        <li>Implemented an LLM-powered assistant (Anthropic/OpenAI/Gemini) that understands customer intent and recommends a matching product from the merchant's catalog.</li>
+        <li>Added a virtual try-on feature that generates a realistic image of the customer wearing the recommended product.</li>
+        <li>Built a Django admin dashboard for per-merchant API tokens, usage quotas, and catalog management.</li>
+        <li>Implemented live Shopify catalog sync via the Admin API and webhooks, keeping merchant inventory current automatically with no manual upload.</li>
+      </ul>
+      <div class="tech">
+        <b>Tech:</b> Django, DRF, JavaScript, PostgreSQL, Anthropic/OpenAI/Gemini APIs, Shopify Admin API
+        <span class="sep">|</span> <b>GitHub:</b> github.com/sidra221/control-dashboard
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Vocalys</div>
+      <div class="entry-kicker">AI-Powered Full-Stack Platform</div>
+      <ul>
+        <li>Developed a platform for uploading, processing, reviewing, and reporting customer-service calls.</li>
+        <li>Built Django REST APIs, JWT authentication, and role-based workflows for QA and Manager users.</li>
+        <li>Created a React dashboard for analytics, follow-up tasks, reports, and real-time notifications.</li>
+        <li>Integrated transcription, sentiment analysis, priority classification, keyword extraction, and AI-generated reports.</li>
+        <li>Implemented background jobs and live status updates with Celery, Redis, Channels, and WebSockets.</li>
+      </ul>
+      <div class="tech">
+        <b>Tech:</b> Django 5, DRF, React 19, PostgreSQL, Celery, Redis, Channels, FastAPI, Whisper, Docker
+        <span class="sep">|</span> <b>GitHub:</b> github.com/sidra221/call-analysis
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Learnix</div>
+      <div class="entry-kicker">Educational AI Application</div>
+      <ul>
+        <li>Developed an educational system that processes books and converts their content into interactive learning material.</li>
+        <li>Applied AI-based document analysis to generate context-aware questions and quizzes from book content.</li>
+        <li>Built workflows for managing source material, generated assessments, answers, and learning results.</li>
+      </ul>
+      <div class="tech"><b>Tech:</b> Python, AI/LLM Integration, Document Processing</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Hospital Management System</div>
+      <div class="entry-kicker">Full-Stack Web Application</div>
+      <ul>
+        <li>Developed modules for patient records, appointments, staff management, and role-based access.</li>
+        <li>Implemented Django APIs, relational data models, and React components supporting CRUD workflows.</li>
+      </ul>
+      <div class="tech">
+        <b>Tech:</b> Django, React, PostgreSQL
+        <span class="sep">|</span> <b>GitHub:</b> github.com/sidra221/hospital
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">SmartTelecomRAG</div>
+      <div class="entry-kicker">AI-Powered Customer Support Chatbot</div>
+      <ul>
+        <li>Built a telecom support chatbot using Retrieval-Augmented Generation and vector search.</li>
+        <li>Implemented document retrieval for relevant responses and delivered an interactive Gradio interface.</li>
+      </ul>
+      <div class="tech">
+        <b>Tech:</b> Python, LlamaIndex, Qdrant, Gradio
+        <span class="sep">|</span> <b>GitHub:</b> github.com/sidra221/SmartTelecomRAG
+      </div>
+    </div>
+
+    <h2>Additional Product &amp; UI/UX Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">UI/UX Designer - Pintours</div>
+      <div class="entry-sub">May 2025 - May 2026 | United States, Remote</div>
+      <ul>
+        <li>Lead web and mobile interface redesigns and collaborate with developers on scalable, implementation-ready solutions.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">UI/UX Designer - Amescom</div>
+      <div class="entry-sub">Sep 2024 - Mar 2025 | Damascus, Syria</div>
+      <ul>
+        <li>Improve interaction flows and align designs with content-management systems and existing technical architecture.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">UI/UX Designer - Newline</div>
+      <div class="entry-sub">Mar 2024 - Aug 2024 | Dubai, UAE, Remote</div>
+      <ul>
+        <li>Translated client requirements and competitor research into responsive, implementation-aware product solutions.</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="entry-head">B.E. in Computer and Automation Engineering</div>
+      <div class="entry-sub">Damascus University | 2021 - 2026 | Damascus, Syria</div>
+    </div>
+
+    <h2>Community Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">Volunteer Web Platform Contributor - Ammrha Team</div>
+      <div class="entry-sub">Dec 2023 - 2025 | Damascus, Syria</div>
+      <ul>
+        <li>Contribute to a web platform for volunteer and beneficiary data, including data structures and integration-aware user flows.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">Online Design Program Instructor - Al-Sham Cultural Forum</div>
+      <div class="entry-sub">Nov 2025 - Present | Remote</div>
+      <ul>
+        <li>Deliver practical design instruction to 30 students and mentor project work through structured critique.</li>
+      </ul>
+    </div>
+
+    <h2>Languages</h2>
+    <p class="summary">Arabic: Native &nbsp;|&nbsp; English: B2 comprehension and speaking; B1 writing</p>
+  </body>
+</html>
