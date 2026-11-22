@@ -53,6 +53,18 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    title: 'QA Engineer',
+    company: 'Dorr',
+    period: 'Nov 2026 — Present',
+    location: 'Saudi Arabia · Remote',
+    tag: 'QA',
+    description: [
+      'Write and execute manual test cases across functional, regression and edge-case scenarios.',
+      'Test REST APIs with Postman — request and response validation, status codes, payload integrity and error handling.',
+      'Document defects with clear reproduction steps and severity, and verify fixes with the development team.',
+    ],
+  },
+  {
     title: 'Full-Stack Developer',
     company: 'Freelance',
     period: '2026 — Present',
@@ -163,6 +175,10 @@ export const skillCategories: SkillCategory[] = [
   },
   { name: 'Mobile', skills: ['Flutter', 'Dart', 'Riverpod'] },
   { name: 'Databases', skills: ['PostgreSQL', 'MySQL', 'MongoDB'] },
+  {
+    name: 'Quality Assurance',
+    skills: ['Manual Testing', 'API Testing', 'Postman', 'Test Cases', 'Bug Reporting', 'Regression Testing'],
+  },
   {
     name: 'Automation & Infrastructure',
     skills: ['n8n', 'Docker', 'Docker Compose', 'Git', 'GitHub', 'Bash', 'Linux'],
